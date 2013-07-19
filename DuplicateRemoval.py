@@ -15,19 +15,27 @@ import sys
 from collections import OrderedDict
 
 # Help input
+def help():
+   print "DuplicateRemoval reads input file, deletes duplicate entries, and writes to a new file.\n"
+   print "Command structure: python DuplicateRemoval.py <input file> <new output file>"
+   exit(0)
+
+# Error function
+def error():
+   print "Command structure: python DuplicateRemoval.py <input file> <new output file>"
+   exit(1)
+
+
 for arg in sys.argv:
    if (arg == "--help" or arg == "-h"):
-      print "DuplicateRemoval reads input file, deletes duplicate entries, and writes to a new file.\n"
-      print "Command structure: DuplicateRemoval.py <input file> <new output file>"
-      exit(0)
+       help()
 
 # select input file and name output file from command line argument
 if (len(sys.argv) == 3):
    infile = sys.argv[1]
    outfile = sys.argv[2]
 if (len(sys.argv) != 3):
-   print "Command structure: DuplicateRemoval.py <input file> <new output file>"
-   exit(1)
+      error()
 
 print "Reading ",infile," and searching for duplicate entries...\n"
 inf = open(infile,"r")

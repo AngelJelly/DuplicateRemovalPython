@@ -27,7 +27,7 @@ all that time required to compile the C++ code...
 
 ===Command Structure===
 
-./DuplicateRemoval.py <input file> <new output file>
+python DuplicateRemoval.py <input file> <new output file>
 
 I have included a simple text file called "abc.txt" which lists the English 
 alphabet with many duplicates. You can run DuplicateRemoval on this file 
